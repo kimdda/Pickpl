@@ -1,0 +1,51 @@
+<ul>
+	<li data-link="/Pickpl/admin/index.jsp" class="nav_main">메인</li>
+	<li data-link="/Pickpl/admin/mng_diary.jsp" class="nav_diary">글 관리</li>
+	<li data-link="/Pickpl/admin/mng_member.jsp" class="nav_member">회원 관리</li>
+	<li data-link="/Pickpl/admin/mng_report.jsp" class="nav_report">신고 관리</li>
+	<li data-link="/Pickpl/admin/mng_rcmnd.jsp" class="nav_rcmnd">추천 목록 관리</li>
+	<!-- <li class="stat_menu">통계 관리</li>
+	<ul>
+		<li data-link="/Pickpl/admin/mng_stat_diary.html">글 통계</li>
+		<li data-link="/Pickpl/admin/mng_stat_member.html">회원 통계</li>
+		<li data-link="/Pickpl/admin/mng_stat_log.html">활동 통계</li>
+	</ul> -->
+</ul>
+
+<script>
+	var isLogin = false;
+	if(sessionStorage.getItem("loginId") != null) {
+		isLogin = true;
+	}
+	$(".stat_menu").click(function() {
+		if(isLogin) {
+			if($(this).hasClass("active")) {
+				$(this).removeClass("active").next().slideUp(200);
+			} else {
+				$(this).addClass("active").next().slideDown(200);
+			}			
+		} else {
+			alert("로그인 후 이용 가능합니다.");
+		}
+	});
+
+	$("[data-link]").click(function() {
+		if(isLogin) {
+			location.href = $(this).attr("data-link");			
+		} else {
+			alert("로그인 후 이용 가능합니다.");
+		}
+	});
+	
+	if($(".diary_wrap").length || $(".diary_detail_wrap").legnth) {
+		$(".nav_diary").addClass("selected");
+	} else if($(".member_wrap").length || $(".member_detail_wrap").length) {
+		$(".nav_member").addClass("selected");
+	} else if($(".report_wrap").length || $(".report_detail_wrap").length ) {
+		$(".nav_report").addClass("selected");
+	} else if($(".reco_wrap").length || $(".new_reco_wrap").length) {
+		$(".nav_rcmnd").addClass("selected");
+	} else {
+		$(".nav_main").addClass("selected");
+	}
+</script>

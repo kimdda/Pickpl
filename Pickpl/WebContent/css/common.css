@@ -1,0 +1,225 @@
+body, header, nav, footer, div, span, form, fieldset, select, option, input, label, textarea, button, h1, h2, h3, h4, h5, h6, p, a, ul, li, img, pre {margin: 0; padding: 0; box-sizing: border-box;}
+
+/* 
+	색깔
+	-로고 색 #2ce4ce
+	-베이지? #c4b6b6
+	-푸르딩딩 #46616e
+	-버튼 메인 색 #0ea098
+	-진한 초록색 #02636d
+	-이상한 색 #63610c
+*/
+
+body {font-family: 'Noto Sans KR', sans-serif; color: #333; font-size: 16px;}
+h2 {font-size: 26px; font-weight: 500;}
+h3 {font-size: 22px; font-weight: 500;}
+a {text-decoration: none; color:#333;}
+li {list-style: none;}
+fieldset {border: none;}
+input[type="text"], 
+input[type="password"],
+input[type="search"],
+input[type="date"] {padding: 10px 5px; border: 1px solid #ccc; font-size: 14px;  width: 100%;}
+input.error {border-color: firebrick;}
+input.checked {border-color: #03cbb3;}
+input[type="submit"], 
+input[type="button"], 
+button {border:0; font-size: 14px; cursor: pointer;}
+select {padding: 10px 5px; border: 1px solid #ccc;}
+pre {font-family: 'Noto Sans KR', sans-serif;}
+textarea {padding: 5px 10px; border: 1px solid #ccc; font-family: 'Noto Sans KR', sans-serif;}
+
+
+.wrap {width: 1200px; margin: 130px auto 80px; min-height: calc(100vh - 310px);}
+.hide {display: none !important;}
+
+.divider {margin-top: 30px; margin-bottom: 10px; padding: 0; overflow: visible; border: none; border-top: 1px solid #e0e0e0; color: #6e6d7a; text-align: center;}
+.divider::after {content: ""; display: inline-block; position: relative; top: -10px; padding: 0 16px; background: #fff; font: normal 14px/14px 'Noto Sans KR' ,Arial, sans-serif;}
+
+/* 12.24 다정 수정 */
+.loader {animation: spin 2s linear infinite; color: #0ea098; font-size: 28px; vertical-align: middle;}
+.loader.white {color: #fff;} 
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg);}
+}
+
+.btn, .sec_btn, .outline_btn, .sec_outline_btn {padding: 8px 10px; min-width: 100px; text-align: center;}
+.btn {background: #0ea098; color: #fff; border: 2px solid #0EA098;}
+.btn:hover {background: #4bb3ad; border-color:#4bb3ad;}
+.btn:active {background: #0B7872; border-color:#0B7872;}
+
+.sec_btn { background-color: #46616e; border: 2px solid #46616e; color: #fff;}
+.sec_btn:hover {background: #6c818a; border-color: #6c818a;}
+.sec_btn:active {background: #233137; border-color: #233137;}
+
+.outline_btn {border: 2px solid #0EA098; text-align: center; background-color: #fff;}
+.outline_btn:hover {border-color:#4bb3ad; background: #f0f0f0;}
+.outline_btn:active {border-color:#0B7872;}
+
+.sec_outline_btn {border: 2px solid #46616e; text-align: center; background-color: #fff;}
+.sec_outline_btn:hover {border-color:#6c818a; background: #f0f0f0;}
+.sec_outline_btn:active {border-color:#233137;}
+
+/********************** 헤더 **********************/
+header {position: fixed; top: 0; width: 100%; height: 80px; background-color: rgba(255,255,255,0.7); border-bottom: 1px solid #ddd; z-index: 10;}
+header .header_box {max-width: 1200px; margin: 0 auto; height: 100%;}
+header .header_box h1, header .header_box nav {display: inline-block; vertical-align: top;}
+header .header_box h1 {width: 30%; padding-top: 10px;}
+header .header_box a {font-weight: 500; color: #2ce4ce;}
+header .header_box .logo {height: 60px; margin-right: 10px; vertical-align: middle;}
+header .header_box nav {width: 69%; font-size: 14px; padding: 20px 0; position:relative; text-align: right;}
+header nav .search_bar {width: 40%; vertical-align: middle;}
+header .header_box .search_icon,
+header .header_box .menu_icon {height: 40px; border-radius: 50%; cursor: pointer; vertical-align: top;}
+header .header_box .search_icon:hover,
+header .header_box .menu_icon:hover {transform: translateY(-3px); transition: all 0.2s;}
+header .header_box .menu_icon {margin-left: 30px;}
+header .gnb {display:none; position: absolute; right: 0; top: 70px; width: 220px; padding: 10px 0; text-align: left; background: #fff;  border: 1px solid #f0f0f0; box-shadow: 1px 1px 5px rgba(240,240,240,0.5);}
+header .gnb.active {display: block;}
+header .gnb li {padding: 10px; cursor: pointer;}
+header .gnb li:hover {background: #f0f0f0;}
+
+/********************* 푸터 *********************/
+	/* 12.13 다정 수정  */
+footer {background: #46616e; position: relative; z-index: 10;}
+footer .footer_box {background: #46616e; width: 1200px; height: 100px; margin: 0 auto; padding: 20px 0; position: relative; overflow: hidden;}
+footer .footer_box > div {display: inline-block; height: 100%; vertical-align: middle;}
+footer .policy_box {width: 49%; padding-top: 5px;}
+footer .policy_box > a {margin-right: 10px; padding-bottom: 1px; font-size: 12px; color: #fff;}
+footer .policy_box > a:hover {border-bottom: 1px solid #fff;}
+footer .policy_box > p {margin-top: 3px; font-size: 12px; color: #fff;}
+footer .logo_box {position: absolute; left: 50%; z-index: 5; transform: translateX(-50%);}
+footer .logo_box a {display: block; height: 60px;}
+footer .logo_box img {height: 100%;}
+footer .f_search_box {width: 50%; position: relative; padding-top: 10px; text-align: right;}
+footer .f_search_box input {width: 70%; min-width: 200px; max-width: 400px; padding-right: 50px;  position: relative;}
+footer .f_search_box input::after {content:'search'; font-family: 'Material Icons'; position: absolute; right: 0;}
+footer .f_search_box .f_search_icon {position: absolute; top: 15px; right: 10px; font-size: 30px; color: #2ce4ce; background: transparent;}
+
+
+/********************* 다이어리 공통 *********************/
+	/* 다이어리 */
+/* .diary_list {width: 100%;} */
+.diary_list .serach_list {width: 100%;}
+.diary_list .diary {display: inline-block; width: calc((100% / 4) - 11.5px); margin-right: 15px; margin-bottom: 30px; vertical-align: top; cursor: pointer;}
+.diary_list .diary:nth-of-type(4n) {margin-right: 0;}
+.diary_list .place_box:hover .info_box {opacity: 1; transition: all 0.3s;}
+.diary_list .place_box:hover .slick-arrow {opacity: 1;}
+.diary_list .place_box {position: relative; border-radius: 10px; overflow: hidden;}
+.diary_list .diary_img {width: 100%; height: 230px; text-align: center; background: #000;}
+.diary_list .diary_img img {height: 100%; object-fit: cover; object-position: center;}
+	/* 슬라이더 */
+.slick-list, .slick-track {height: 100%;}
+.slick-slider .slick-arrow {opacity: 0; position: absolute; top: 50%; transform: translateY(-50%); z-index: 9; background: transparent; color: rgba(255, 255, 255, 0.7); font-size: 30px; cursor: pointer;}
+.slick-slider .slick-arrow:hover {color: rgba(50, 50, 50, 0.7)}
+.slick-slider .slick-prev {left: 10px;}
+.slick-slider .slick-next {right: 10px;}
+	/* 다이어리 상단 아이콘 */
+.diary_list .top_icon {position: absolute; top: 15px; right: 15px;}
+.diary_list .top_icon button {background: transparent; vertical-align: top; cursor: pointer;}
+		/* 픽 */
+.diary_list .pick_btn {width: 28px; height: 29px; overflow:hidden; background: transparent;}
+.diary_list .pick_btn::before {content:''; display: block; height: 100%;  background: 0 / cover no-repeat url('../img/icon/pick.svg');}
+.diary_list .pick_btn.picked::before {background: right / cover no-repeat url('../img/icon/pick.svg');}
+.diary_list .top_icon button:hover {transform:translateY(-2px); transition: transform 0.2s;}
+	/* 장소명 & 주소 */
+.diary_list .info_box {width: 100%; position: absolute; bottom: 0; padding: 15px; background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); font-size:16px; color: #fff; min-height: 80px; opacity: 0;}
+.diary_list .info_box .place_name {font-size: 14px; font-weight: 500; min-height: 23px;}
+.diary_list .info_box .address { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+	/* 회원정보 */
+.diary_list .acct_box {display: flex; align-items: center; width: 100%; margin-top: 10px;}
+.diary_list .acct_box .acct_profile {width: 35px; height: 35px; border-radius: 50%; cursor: pointer;}
+.diary_list .acct_box p {margin-left: 10px;}
+.diary_list .acct_box .writer_id {font-weight: 500; cursor:pointer;}
+.diary_list .acct_box .pick_cnt,
+.diary_list .acct_box .view_cnt {font-size: 14px; font-weight: 500; color: #46616e;}
+.diary_list .acct_box .pick_cnt {margin-left: auto; margin-right: 5px;}
+.diary_list .acct_box .pick_cnt::before,
+.diary_list .acct_box .view_cnt::before  {content:''; display: inline-block; width: 20px; height: 16px; background: no-repeat url('../img/icon/pick_cnt.svg'); vertical-align: middle;}
+.diary_list .acct_box .view_cnt::before { margin-right: 5px; background-image: url('../img/icon/view_cnt.svg');}
+
+/* 리스트 정렬 순서 */
+.order_box {margin: 20px 0 20px auto; width: 120px; position: relative; font-size: 12px;}
+.order_box .selected_order {display: inline-block; width: 100%; padding: 5px 7px; text-align: left; border:1px solid #46616e70; cursor: pointer;}
+.order_box .selected_order::after {content:'expand_more'; font-family: 'Material Icons'; font-size: 20px; line-height: 1; color: #46616e70; float: right;}
+.order_box .selected_order.active::after {content:'expand_less'; font-family: 'Material Icons'; font-size: 20px; color: #46616e70; float: right;}
+.order_list {display: none; position: absolute; width: 100%; margin-top: 5px; border: 1px solid #999; background:#fff; z-index: 1;}
+.order_list li {text-align: left; padding: 7px; cursor: pointer;}
+.order_list li:not(:last-child) {border-bottom: 1px solid #46616e70;}
+.order_list li:hover {background: #ddd;}
+
+/********************* 다이어리 관련 아이콘 *********************/
+[class *= 'ICON']::before {content:''; display: inline-block; font-family:'Material Icons'; font-size: 24px; vertical-align: middle; color:#555; margin-right: 2px;}
+[class *= 'SUB_ICON']::before {content:''; display: inline-block; font-size: 20px; margin-top: -3px;}
+.DATE_ICON::before {content:'today';}
+.WEATHER_ICON::before {content:'thermostat';}
+.PHOTO_ICON::before {content:'collections';}
+.PLACE_ICON::before {content:'pin_drop';}
+.ADDR_ICON::before {content:'map';}
+.CONTENT_ICON::before {content:'history_edu';}
+.ETC_ICON::before {content: 'more_horiz'; vertical-align: top;}
+.DRONE_SUB_ICON::before {content:'control_camera';}
+.PUBLIC_SUB_ICON::before {content:'directions_bus';}
+.PUBLICINFO_SUB_ICON::before {content:'directions_walk';}
+.PARK_SUB_ICON::before {content:'toys';}
+.PARKINFO_SUB_ICON::before {content:'timer';}
+.TOILET_SUB_ICON::before {content:'wc';}
+.LOCKER_SUB_ICON::before {content:'luggage';}
+.SHOWER_SUB_ICON::before {content:'shower';}
+
+
+/********************* 팝업 *********************/
+.popup {display: none; width: 100%; height: 100vh; position: fixed; top: 0; height: 0; z-index: 100;}
+.popup .background {background: rgba(0,0,0,0.7); width: 100%; height: 100vh;}
+.popup .popupBox {width: 500px; padding: 40px 30px 30px; position:absolute; top: 45vh; left: 50%; transform: translate(-50%, -50%); background: #fff;}
+.popup .close_pop_btn {position: absolute; top: 10px; right: 10px; font-size: 30px; color:#555; background: transparent; cursor: pointer;}
+.popup .popHead {margin-bottom: 20px; font-size: 24px; font-weight: 700;}
+.popup .popBody {font-size: 20px; text-align: center;}
+.popup .popFoot {text-align: center; margin-top: 40px;}
+.popup .popFoot button {min-width: 150px; font-size: 16px;}
+.popup .popFoot button:not(:first-child) {margin-left: 20px;}
+
+.swal2-container .error {font-size: 12px; color: firebrick; padding-top: 3px;}
+
+
+/********************* 로그인 팝업 12.23 다정 수정 *********************/
+/* .login_pop {display: block;} */
+.login_pop .login_form {width: 80%; margin: 0 auto; font-size: 16px; text-align: left;}
+.login_pop .login_form label {display: block; margin: 15px 0 5px; font-size: 14px;}
+.login_pop .login_form div {text-align: center;}
+.login_pop .login_form .find_info {font-size: 13px; color:#555; text-align: center;}
+.login_pop .login_form .find_info:hover {color: #02636d;}
+.login_pop .alert_txt {font-size: 12px; padding-top: 3px; color: firebrick; text-align: left;}
+/* .login_pop .swal2-footer {border: none;} */
+.login_pop .popBody div {margin-top: 20px;}
+.login_pop .login_fail {padding: 10px; text-align: center; background: #f0f0f0; font-size: 14px;}
+.login_pop .login_fail p::before {content:'error'; display: inline-block; margin-right: 5px; margin-top: -3px; vertical-align: middle; font-family:'Material Icons'; font-size: 20px; color:#f27474;}
+.login_pop .login_btn {width: 180px;}
+.login_pop .divider {display:none; margin-top: 40px; margin-bottom: 10px;}
+.login_pop .divider::after {content:'SNS 계정으로 로그인'; top: -18px;}
+.login_pop .sns_login_box {display:none; text-align: center;}
+.login_pop .sns_login_btn {width: 135px; height: 36px; margin-right: 5px; margin-bottom: 5px; border-radius: 2px;}
+.login_pop .google_login {background: center / contain no-repeat url('../img/icon/login_btn_google.svg');}
+.login_pop .naver_login {background: center / contain no-repeat url('../img/icon/login_btn_naver.svg');}
+.login_pop .sns_login_btn.kakao_login {background: center / contain no-repeat url('../img/icon/login_btn_kakao.svg'); margin-right: 0;}
+.login_pop .sns_login_btn:hover {box-shadow: 1px 1px 3px #aaa;}
+
+/********************* 픽 폴더 팝업 *********************/
+/* #pickPop {display: block;} */
+#pickPop .alert_txt {display:none; font-size: 12px; padding-top: 3px; color: firebrick; text-align: left; margin-bottom: 10px;}
+#pickPop .folder_list {max-height: 280px; overflow-y: auto;}
+#pickPop .folder {padding: 10px 15px; margin-bottom: 10px; text-align: left; font-size: 20px; border: 1px solid #46616e; vertical-align: middle;}
+#pickPop .folder::before {content:'folder'; font-family: 'Material Icons'; font-size: 28px; margin-right: 15px; color: #46616e; vertical-align: middle;}
+#pickPop .folder:not(.new_folder):hover,
+#pickPop .folder.active,
+#pickPop .folder.folder:not(.new_folder):hover::before,
+#pickPop .folder.active::before {background: #46616e; color:#fff; cursor: pointer;}
+	/* 새폴더 추가 영역 */
+#pickPop .new_folder_box {display: none; margin-top: 5px; text-align: right;}
+#pickPop .new_folder {padding: 0 0 0 15px; text-align: left; background: #46616e;}
+#pickPop .new_folder.folder::before {color: #fff;}
+#pickPop .new_folder input {width: calc(100% - 43px); padding: 10px; font-size: 18px;}
+#pickPop .new_folder_box > button {padding: 5px 15px;}
+#pickPop #addFolderBtn {width: 130px; margin: 15px 0 10px;}
+#pickPop #addFolderBtn::before {content:'add'; font-family: 'Material Icons'; font-size: 24px; margin-right: 5px; margin-left: -15px; line-height: 0; position: relative; top: 7px;}

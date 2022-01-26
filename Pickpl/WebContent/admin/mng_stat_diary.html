@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/admin_common.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>픽플 관리자 - 글 통계</title>
+</head>
+<body>
+	<div class="wrap">
+		<nav></nav>
+		<div class="main diaryStat_wrap stat_wrap">
+			<!-- <h3 class="page_title">추천 목록 관리</h3> -->
+         <h4 class="box_title">글 통계</h4>
+         <div class="search_box box">
+				<div class="option_box">
+					<p>검색 기간</p>
+					<div class="option_selection">
+						<p><input type="radio" name="range" value="3m" id="fullRange" checked /><label for="fullRange">전체</label></p>
+						<p><input type="radio" name="range" value="3m" id="3m" /><label for="3m">3개월</label></p>
+						<p><input type="radio" name="range" value="6m" id="6m" /><label for="6m">6개월</label></p>
+						<p><input type="radio" name="range" value="12m" id="12m" /><label for="12m">12개월</label></p>
+						<p class="date_box">
+							<input type="radio" name="range" value="custom" id="range" />
+							<label for="range">기간 선택</label>
+							<input type="date" name="from_date" class="date_input" /> <span class="date_input"> ~ </span> <input type="date" name="to_date" class="date_input" />
+						</p>
+					</div>
+				</div>
+				<div class="option_box">
+					<p>검색 조건</p>
+					<div class="option_selection">
+						<p><input type="checkbox" name="option" value="all" id="all" checked /><label for="all">전체</label></p> <br/>
+						<p><input type="checkbox" name="option" value="genger" id="gender" /><label for="gender">전체 성별</label></p>
+						<p><input type="checkbox" name="option" value="M" id="male" /><label for="male">남</label></p>
+						<p><input type="checkbox" name="option" value="F" id="female" /><label for="female">여</label></p><br/>
+						<p><input type="checkbox" name="option" value="age" id="age" /><label for="age">전체 연령</label></p>
+						<p><input type="checkbox" name="option" value="10s" id="age10" /><label for="age10">10대</label></p>
+						<p><input type="checkbox" name="option" value="20s" id="age20" /><label for="age20">20대</label></p>
+						<p><input type="checkbox" name="option" value="30s" id="age30" /><label for="age30">30대</label></p>
+						<p><input type="checkbox" name="option" value="40s" id="age40" /><label for="age40">40대</label></p> <br/>
+						<p><input type="checkbox" name="option" value="50s" id="age50" /><label for="age50">50대</label></p>
+						<p><input type="checkbox" name="option" value="60s" id="age60" /><label for="age60">60대</label></p>
+						<p><input type="checkbox" name="option" value="70s" id="age70" /><label for="age70">70대</label></p>
+						<p><input type="checkbox" name="option" value="80s" id="age80" /><label for="age80">80대 이상</label></p>
+					</div>
+				</div>
+         </div>
+			<div class="search_btn_box">
+				<button id="searchBtn" class="btn_4">통계</button>
+			</div>
+			
+			<p class="no_result">검색 결과가 없습니다.</p>
+
+			<div class="result_box">
+				<h4 class="box_title">검색 결과</h4>
+				<div class="select_view_box">
+					<button class="btn_3">목록보기</button>
+					<button class="">그래프보기</button>
+				</div>
+				<table class="result_list detail_list">
+					<thead>
+						<tr>
+							<th class="range">기간</th>
+							<th class="diary_cnt">게시글 수</th>
+							<th class="del_cnt">삭제글 수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="range">2021-09-01 ~ 2021-09-31</td>
+							<td class="diary_cnt">100</td>
+							<td class="del_cnt">45</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="paging_box">
+					<button class="prev_btn material-icons">navigate_before</button> 
+					<input type="text" name="paging" id="paging" value="1" /> / <span class="page_cnt">5</span> 
+					<button class="next_btn material-icons">navigate_next</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$("nav").load("admin_nav.html");
+
+		// 검색 버튼 클릭 이벤트
+		var isResult = true;
+		$("#searchBtn").click(function() {
+			if(isResult) {
+				$(".no_result").hide();
+				$(".result_box").show();
+			} else {
+				$(".no_result").show();
+				$(".result_box").hide();
+			}
+		});
+		
+		// 보기 버튼 선택 이벤트
+		$(".result_box .select_view_box button").click(function() {
+			$(".result_box .select_view_box button").removeClass("btn_3");
+			$(this).addClass("btn_3");
+		});
+
+	</script>
+</body>
+</html>

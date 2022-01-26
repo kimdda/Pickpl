@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 150 40" style="enable-background:new 0 0 150 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4285F4;}
+	.st1{fill:#03C75A;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#FEE500;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0.902;}
+	.st5{enable-background:new    ;}
+	.st6{fill:#191919;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#4285F4;}
+	.st8{fill:none;}
+	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#34A853;}
+	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#FBBC05;}
+	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#EA4335;}
+</style>
+<g>
+	<path class="st1" d="M147,40H3c-1.65,0-3-1.35-3-3V3c0-1.65,1.35-3,3-3h144c1.65,0,3,1.35,3,3v34C150,38.65,148.65,40,147,40z"/>
+	<polygon class="st2" points="34.21,20.42 29.72,14 26,14 26,26 29.9,26 29.9,19.58 34.38,26 38.1,26 38.1,14 34.21,14 	"/>
+	<g>
+		<path class="st2" d="M48.87,22.27v-8.23h1.23v7.15c1.38,0.05,2.95-0.18,4.14-0.46v1.03C52.58,22.25,50.61,22.3,48.87,22.27z
+			 M55.1,13.22h1.19v12.32H55.1v-7.34h-2.77v-1.05h2.77V13.22z M59.14,25.87h-1.2V13.08h1.2V25.87z"/>
+		<path class="st2" d="M67.32,18.38c0.41,5.98-6.97,5.96-6.58,0C60.36,12.44,67.73,12.42,67.32,18.38z M66.09,18.38
+			c0.33-4.51-4.45-4.51-4.12,0C61.65,22.91,66.41,22.91,66.09,18.38z M69.73,13.08h1.2v12.78h-1.2V13.08z"/>
+		<path class="st2" d="M78.73,17.58h3v-4.49h1.2v12.78h-1.2v-7.24h-3v3.75h-5.71l0.01-8.33h1.23v3.16h3.28v-3.16h1.19V17.58z
+			 M77.55,18.24h-3.3v3.12h3.3V18.24z"/>
+		<path class="st2" d="M89.53,20.76v-3.86h6.79v-1.85h-6.8v-1.05h8.01v3.89h-6.79v1.85h7.21v1.02h-3.79v2.28h5.32v1.02h-11.9v-1.02
+			h5.32v-2.28H89.53z"/>
+		<path class="st2" d="M108.36,15.31h-6.97v-1.08h8.2c-0.07,2.83-0.41,5.88-0.87,8.65h2.73v1.02H99.57v-1.02h7.92
+			C107.97,20.53,108.32,17.76,108.36,15.31z"/>
+		<path class="st2" d="M112.02,16.89c-0.14-4.27,6.78-4.26,6.65,0C118.77,21.08,111.91,21.09,112.02,16.89z M113.3,16.88
+			c-0.15,2.79,4.27,2.78,4.13,0C117.6,14.01,113.12,14,113.3,16.88z M122.49,25.61h-8.27v-3.96h1.23v2.91h7.04V25.61z M122.19,22.32
+			H121v-9.24h1.19V22.32z"/>
+	</g>
+</g>
+</svg>

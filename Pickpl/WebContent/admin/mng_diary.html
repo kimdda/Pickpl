@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" href="../css/admin_style_sj.css"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../css/admin_common.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>픽플 관리자</title>
+</head>
+<body>
+	<div class="wrap">
+		<nav></nav>
+		<!-- 관리자페이지 - 글관리 -->
+		<div class="main diary_wrap diarepo_wrap">
+			<h4 class="box_title">글 관리</h4>
+			<div class="search_box box">
+				<div class="option_box">
+					<p class="searchFont ">검색 기간</p>
+					<div class="search_day option_selection">
+						<p>
+							<input type="radio" id="allm" name="day" value="전체"/>
+							<label for="allm">전체</label>
+						</p>
+						<p>
+							<input type="radio" id="3m" name="day" value="3개월"/>
+							<label for="3m">3개월</label>
+						</p>
+						<p>
+							<input type="radio" id="6m"  name="day" value="6개월" />
+							<label for="6m">6개월</label>	
+						</p>
+						<p class="date_box">
+							<input type="radio" id="selectM" name="day" value="custom">
+							<label for="selectM">기간 선택</label>
+							
+							<input class="selectDate date_input" type="date" name="from_date" id="fromDate">
+							<span class="selectDate date_input">~</span>
+							<input class="selectDate date_input" type="date" id="toDate" name="toDate" />
+						</p>
+					</div>
+				</div>	
+
+				<div class="search_stat option_box">
+					<p class="searchFont">게시 상태</p>
+					<div class="option_selection">
+						<p>
+							<input type="radio" id="allDiary" name="stat" value="all" />
+							<label for="onDiary">전체</label>
+						</p>
+						<p>
+							<input type="radio" id="onDiary" name="stat" value="Y" />
+							<label for="onDiary">게시 중</label>
+						</p>
+						<p>
+							<input type="radio" id="offDiary"  name="stat" value="N" />
+							<label for="offDiary">게시 보류</label>
+						</p>
+						<p>
+							<input type="radio" id="delDiary"  name="stat" value="D" />
+							<label for="delDiary">삭제</label>
+						</p>
+					</div>
+				</div>
+
+				<div class="search_do option_box">
+					<p class="searchFont">지역(시/도)</p>
+					<div class="option_selection">
+						<p>
+							<input type="checkbox" id="allDo" name="do" value="all" />
+							<label for="allDo">전체</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Seoul" name="do" value="서울특별시" />
+							<label for="Seoul">서울특별시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Gwangju" name="do" value="광주광역시" />
+							<label for="Gwangju">광주광역시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Incheon" name="do" value="인천광역시" />
+							<label for="Incheon">인천광역시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Daejeon" name="do" value="대전광역시" />
+							<label for="Daejeon">대전광역시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Daegu" name="do" value="대구광역시" />
+							<label for="Daegu">대구광역시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Busan" name="do" value="부산광역시" />
+							<label for="Busan">부산광역시</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Ulsan" name="do" value="울산광역시" />
+							<label for="Ulsan">울산광역시</label><br/>
+						</p>
+						<p>
+							<input type="checkbox" id="Gyeonggi-do" name="do" value="경기도" />
+							<label for="Gyeonggi-do">경기도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Gangwon-do" name="do" value="강원도" />
+							<label for="Gangwon-do">강원도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Chungcheongbuk-do " name="do" value="충청북도" />
+							<label for="Chungcheongbuk-do ">충청북도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Chungcheongnam-do" name="do" value="충청남도" />
+							<label for="Chungcheongnam-do">충청남도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Gyeongsangbuk-do" name="do" value="경상북도" />
+							<label for="Gyeongsangbuk-do">경상북도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Gyeongsangnam-do" name="do" value="경상남도" />
+							<label for="Gyeongsangnam-do">경상남도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Jeollabuk-do" name="do" value="전라북도" />
+							<label for="Jeollabuk-do">전라북도</label>
+						</p>
+						<p>
+							<input type="checkbox" id="Jeollanam-do" name="do" value="전라남도" />
+							<label for="Jeollanam-do">전라남도</label><br/>
+						</p>
+						<p>
+							<input type="checkbox" id="Jeju" name="do" value="제주 특별자치도" />
+							<label for="Jeju">제주특별자치도</label>							
+						</p>
+						<p>
+							<input type="checkbox" id="Sejong" name="do" value="세종 특별자치시" />
+							<label for="Sejong">세종특별자치시</label>
+						</p>
+					</div>
+				</div>
+
+				<div class="search_input option_box">
+					<p class="searchFont">검색하기</p>
+					<input type=search></input>	
+				</div>
+			</div>
+			<div class="searchBtnArea search_btn_box" id="">
+				<button class="btn_3" id="searchBtn">검색</button>
+			</div>
+
+			<!-- 검색 결과 -->
+			<p class="no_result">검색 결과가 없습니다.</p>
+			<div class="result_box">
+				<!-- <h4 class="box_title">검색결과</h4> -->
+				<p><span class="result_cnt">00</span>건의 검색결과</p>
+				<table>
+					<thead>
+						<tr>
+							<th class="index">번호</th>
+							<th class="writer_id">작성자</th>
+							<th class="up_date">게시 날짜</th>
+							<th class="d_id">글번호</th>
+							<th class="do">지역(시/도)</th>
+							<th class="up_stat">상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="index">1</td>
+							<td class="writer_id">idid1</td>
+							<td class="up_date">2021-09-09</td>
+							<td class="d_id">345</td>
+							<td class="do">경상북도</td>
+							<td class="up_stat">게시 보류</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="paging_box" id="">
+					<button class="searchPageBefore material-icons" id="">navigate_before</button>
+					<input type="text" name="paging" id="paging" /> / <span id="">5</span>
+					<button class="searchPageNext material-icons" id="">navigate_next</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+
+	<script>
+		$("nav").load("admin_nav.html");
+		
+	</script>
+</body>
+</html>

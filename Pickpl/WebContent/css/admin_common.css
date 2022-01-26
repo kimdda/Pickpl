@@ -1,0 +1,235 @@
+body, div, nav, ul, li, h2, h3, h4, p, table, thead, tbody, tr, th, td, form, input, select, option, button {margin: 0; padding: 0; box-sizing: border-box;}
+
+body {font-size: 15px; font-family: 'Noto Sans KR', sans-serif; color: #333;}
+li {list-style: none;}
+input[type="submit"],
+input[type="button"],
+button {padding: 5px 10px; border: 0; font-size: 15px; cursor: pointer;}
+label {display: inline-block; min-width: 120px;}
+input, select {padding: 3px 7px; font-size: 15px; font-family: 'Noto Sans KR', sans-serif; color: #333;}
+
+/* ink #4d4b61
+pink #f08c8c
+petal #ebbbb1
+sea #bdd5d7
+marigold #f8ca72
+pebble #cac8c9 */
+
+/* 다홍 #ed5958
+회색 #e7e6e0
+노랑 #f2b531
+진한 초록 #03878f
+연한 초록 #68c6a4
+곤색 #113245 */
+
+.wrap {width: 100%; max-width: 1280px; min-height: 100vh;}
+.page_title {margin-bottom: 15px;}
+.hide {display: none !important;}
+.btn_1 {background: #f8ca72; color: #fff;}
+.btn_1:hover {background: #f6b53c;}
+.btn_2 {background: #f08c8c; color: #fff;}
+.btn_2:hover {background: #ed7878;}
+.btn_3 {background: #68c6a4; color: #fff;}
+.btn_3:hover {background: #3fa681;}
+.btn_4 {background: #113245; color: #fff;}
+.btn_4:hover {background: #194a66;}
+
+h4.box_title {padding: 5px; background: #cac8c9;}
+.box {padding: 15px; background: #f0f0f0;}
+
+
+/* 메뉴 */
+nav {width: 250px; height: 100vh; position: fixed; top: 0; padding-top: 40px; background: #03878f; float: left;}
+nav ul li {width: 90%; margin: 0 auto; padding: 15px 30px; color: #ddd; cursor: pointer;}
+nav > ul > li:hover {color: #fff; font-weight: 500;}
+nav > ul > li.selected {background: #fff; color: #03878f;}
+nav > ul ul {display: none; margin: 0 30px; padding: 10px; background: #fff; border-radius: 5px;}
+nav > ul ul li {color: #333;}
+nav > ul ul > li {padding: 10px}
+nav > ul ul > li:hover {background: lightsteelblue; border-radius: 5px;}
+
+/* 메인 영역 */
+.main {width: calc(100% - 250px); float: right; padding: 30px; padding-right: 50px;}
+
+/* 리스트 테이블 공통 */
+.result_box {display: none;}
+table {width: 100%; font-size: 15px; text-align: center; border-collapse: collapse;}
+table tr {border-bottom: 2px solid #fff;}
+table th {padding: 7px; font-weight: 500; color: #fff; background: #4d4b61;}
+table tbody tr {cursor: default; background: #f0f0f0;}
+table:not(.detail_list) tbody tr:hover,
+table tbody tr.selected {background: #bdd5d7bb;}
+table td {padding: 7px; font-weight: 300;}
+
+/* 검색 영역 공통 */
+.option_box {margin-bottom: 10px;}
+.option_box p {display: inline-block; margin-bottom: 10px; vertical-align: top;}
+.option_box > p {min-width: 120px; vertical-align: top; margin-bottom: 10px;}
+.option_box label {min-width: 0;}
+.option_box select {width: 140px; margin-right: 10px;}
+.option_box .option_selection {display: inline-block; width: 85%;}
+.option_box .option_selection p {min-width: 100px;}
+.option_box input[type="radio"],
+.option_box input[type="checkbox"] {margin-right: 5px;}
+.option_box input[type="date"] {width: 160px; vertical-align: top;}
+.option_box .date_input {display:none;}
+.option_box input[name="from_date"] {margin-left: 5px;}
+.option_box input[value="custom"]:checked ~ .date_input {display: inline-block;}
+.search_btn_box {text-align: right; margin-top: 15px; margin-bottom: 30px;}
+.search_btn_box #searchBtn {width: 100px;}
+
+/* 검색 결과 공통 */
+.no_result {display:none; text-align: center; padding: 15px 0; border: 1px solid #ccc; border-width: 1px 0 1px 0; color: #777;}
+.result_box > p {color: #777; padding-bottom: 5px; font-size: 14px;}
+.result_box p .result_cnt {color: #4d4b61;}
+
+/* 페이징 */
+.paging_box {text-align: right; margin-top: 15px;}
+.paging_box span,
+.paging_box input,
+.paging_box button {vertical-align: middle;}
+.paging_box button {width: 30px; padding: 0; background: transparent;}
+.paging_box #paging {width: 40px; text-align: center;}
+
+/* 상세 신고관리 공통 */
+.report_history_wrap #viewReportHistoryBtn {margin-left: 20px;}
+.report_mng_wrap table td.report_mng_box > p {margin-bottom: 10px; text-align: left;}
+.report_mng_wrap input[type="text"] {width: 60%; margin-right: 4px; vertical-align:top;}
+.report_mng_wrap select {width: 15%; height: 33px; margin-right: 4px; vertical-align:top;}
+.report_mng_wrap select option {padding: 5px;}
+
+/**************** 메인 ****************/
+.index_wrap > div {display: none;}
+.index_wrap .login_box {width: 50%; margin: 50px auto; padding: 30px; text-align: center;}
+.index_wrap .login_box h2 {margin-bottom: 30px;}
+.index_wrap .login_box input {width: 80%; margin-bottom: 15px; padding: 5px;}
+.index_wrap .login_box #loginBtn {width: 80%; padding: 7px;}
+
+/**************** 글관리 ****************/
+.diary_wrap .option_box .option_selection p {min-width: 130px;}
+.diary_wrap table .index {width: 5%;}
+.diary_wrap table .d_id {width: 10%}
+.diary_wrap table .writer_id {width: 15%;}
+.diary_wrap table .place_name {width: 25%;}
+.diary_wrap table .region {width: 20%}
+.diary_wrap table .up_date {width: 15%}
+.diary_wrap table .up_stat {width: 10%}
+
+/**************** 글관리 상세 ****************/
+.diary_detail_wrap > div {margin-bottom: 30px;}
+.diary_detail_wrap > div.func_btn_box {text-align: right; margin-bottom: 15px;}
+.diary_detail_wrap #backBtn {width: 130px; float: left;}
+.diary_detail_wrap #statBtn {width: 130px;}
+.diary_detail_wrap .diary_info table th,
+.diary_detail_wrap .diary table th {width: 15%;}
+.diary_detail_wrap table td {width: 35%; text-align: left;}
+.diary_detail_wrap #etc > span.selected::after {content: ' / '; }
+.diary_detail_wrap .diary .picture img {width: calc(20% - 14px); height: 130px; margin-right: 10px; object-fit: cover; object-position: center;}
+.diary_detail_wrap .diary .picture img:last-child {margin-right: 0;}
+.diary_detail_wrap .report_history_wrap th,
+.diary_detail_wrap .report_mng_wrap th {width: 7.5%;}
+.diary_detail_wrap #backBtn {width: 130px;}
+
+/**************** 회원관리 ****************/
+.member_wrap .option_box p > span {display: inline-block; min-width: 120px;}
+/* .member_wrap .search_box select {margin-right: 20px; height: 30px;} */
+.member_wrap .search_box input[type="text"] {width: 250px; height: 30px;}
+.member_wrap .member_table {margin-bottom: 15px;}
+.member_wrap .member_table .index {width: 5%;}
+.member_wrap .member_table .id {width: 15%;}
+.member_wrap .member_table .name {width: 10%;}
+.member_wrap .member_table .gender {width: 10%;}
+.member_wrap .member_table .birth {width: 15%;}
+.member_wrap .member_table .phone {width: 15%;}
+.member_wrap .member_table .joinDate {width: 15%;}
+.member_wrap .member_table .acctStat {width: 15%;}
+
+/**************** 회원관리 상세 ****************/
+.member_detail_wrap > div {margin-bottom: 30px;}
+.member_detail_wrap > div.func_btn_box {text-align: right; margin-bottom: 15px; overflow: hidden;}
+.member_detail_wrap #backBtn {width: 130px; float: left;}
+.member_detail_wrap #statBtn {width: 130px;}
+.member_detail_wrap table td {text-align: left;}
+    /* 메일 수정 */
+.member_detail_wrap p.view_mode {overflow: hidden;}
+.member_detail_wrap p.mdfy_mode {display: none;}
+.member_detail_wrap #mdfyMailBtn {float: right;}
+.member_detail_wrap #mdfyEmail {width: 80%; vertical-align: middle; margin-bottom: 5px;}
+.member_detail_wrap #cancelBtn {margin-right: 3px;}
+.member_detail_wrap .report_history_wrap table th,
+.member_detail_wrap .report_mng_wrap table th {width: 15%;}
+
+/**************** 신고관리 ****************/
+.report_wrap .option_box .option_selection p {min-width: 120px;}
+.report_wrap .result_box h4 {margin-top: 30px; margin-bottom:15px;}
+.report_wrap .table .index {width: 5%}
+.report_wrap .table .report_date {width: 15%}
+.report_wrap .table .report_type {width: 15%}
+.report_wrap .table .report_id {width: 20%}
+.report_wrap .table .target_id {width: 20%}
+.report_wrap .table .report_stat {width: 5%}
+
+/**************** 신고관리 상세 ****************/
+.report_detail_wrap table th {width: 15%; text-align: left;}
+.report_detail_wrap table td {width: 35%; text-align: left;}
+.report_detail_wrap .back {float: left;}
+/* .report_detail_wrap .move {float: right;} */
+.report_detail_wrap #memBtn,
+.report_detail_wrap #diaBtn,
+.report_detail_wrap #backBtn {width: 130px; margin-top: 15px;}
+.report_detail_wrap .move  #memBtn {margin-right: 20px;}
+
+/****************** 추천 목록 관리 ******************/
+.reco_wrap table {margin-top: 15px;}
+.reco_wrap table .index {width: 5%;}
+.reco_wrap table .title {width: 30%;}
+.reco_wrap table .diary_cnt {width: 8%;}
+.reco_wrap table .write_date {width: 12%;}
+.reco_wrap table .up_range {width: 20%;}
+.reco_wrap table .stat {width: 10%;}
+.reco_wrap table .func {width: 15%;}
+.reco_wrap .func button:not(:first-child) {margin-left: 7px;}
+.reco_wrap .btn_box {margin-top: 15px; text-align: right;}
+.reco_wrap .add_list_btn {width: 100px; padding: 7px;}
+
+/****************** 추천 목록 작성 ******************/
+.new_reco_wrap .writing_box {margin-top: 15px;}
+.new_reco_wrap .writing_box label,
+.new_reco_wrap .writing_box p > span:first-of-type {display: inline-block; min-width: 120px;}
+.new_reco_wrap .writing_box p {margin-bottom: 10px;}
+.new_reco_wrap #title {width: 360px;}
+.new_reco_wrap input[type="date"] {width: 170px; font-size: 15px;}
+.new_reco_wrap .recommend_btn_box {display: flex; justify-content: space-between; margin-top: 5px;}
+.new_reco_wrap .recommend_btn_box button {margin-right: 7px;}
+.new_reco_wrap .recommend_btn_box button:last-of-type {margin-right: 0;}
+.new_reco_wrap .recommend_btn_box .stat_btn {display: none;}
+.new_reco_wrap hr {border: none; border-top: 1px solid #4d4b61; margin: 45px 0 35px; text-align: center; overflow: visible;}
+.new_reco_wrap hr::after {content: '다이어리 검색하기'; display: inline-block; padding: 0 10px; position: relative; top: -13px; z-index: 1; font-size: 14px; color: #4d4b61; background: #fff;}
+	/* 테이블 선택 관련 */
+.new_reco_wrap tbody tr .selection::before {content:'check_box_outline_blank'; font-size: 20px; font-family: 'Material Icons'; color: #4d4b61; vertical-align: middle;}
+.new_reco_wrap tbody tr.selected .selection::before {content:'check_box';}
+	/* 글 검색 영역 */
+.new_reco_wrap .search_box .option_box p {display: block;}
+.new_reco_wrap .search_box .option_box p > label {min-width: 120px;}
+	/* 글 검색 결과 영역 */
+.new_reco_wrap .result_btn_box {margin-top: 10px;}
+.new_reco_wrap .result_btn_box button,
+.new_reco_wrap .result_btn_box input,
+.new_reco_wrap .result_btn_box span {vertical-align: middle;}
+.new_reco_wrap .result_btn_box .paging_box button {width: 30px; padding: 0; background: transparent;}
+.new_reco_wrap .result_btn_box #paging {width: 40px; text-align: center;}
+
+/****************** 글 통계 관리, 활동 통계 관리 ******************/
+.stat_wrap .result_box {display: none;}
+.stat_wrap .result_box .select_view_box {margin: 15px 0;}
+.stat_wrap .result_box .select_view_box button {width: 100px; height: 40px; margin-right: 10px;}
+
+/****************** 글 통계 관리 ******************/
+.diaryStat_wrap .result_list .range {width: 50%;}
+.diaryStat_wrap .result_list th[class *= "cnt"] {width: 25%;}
+.stat_wrap .option_box .option_selection p:nth-child(13) {margin-left: 103px;}
+
+/****************** 활동 통계 관리 ******************/
+.logStat_wrap .result_box .box_title {margin-bottom: 15px;}
+.logStat_wrap .result_list .range {width: 40%;}
+.logStat_wrap .result_list th[class *= "cnt"] {width: 20%;}
