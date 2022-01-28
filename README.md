@@ -31,9 +31,12 @@
   * sweetAlert2.js (팝업)
 
 ## 시연영상
-[시연 영상 링크](https://drive.google.com/file/d/15XzajxBGD_925sre0KAQVi4eRjcdZgqN/view?usp=sharing)
+[시연 영상 링크](http://naver.me/FshSpBvv)
 
-[id]: URL "시연 영상"
+[시연 영상 링크]: URL "시연 영상"
+
+## 화면 설명 pdf
+[pdf 링크](http://naver.me/x0Gkxqmd)
 
 
 ## 메인페이지
