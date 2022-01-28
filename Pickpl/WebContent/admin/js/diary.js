@@ -136,13 +136,18 @@ function fetchList() {
 function toDetail(e) {
 	var dId = $(e.target).parents("tr").find(".d_id").text();
 	//console.log(id);
-	html = 
-	'<form action="../adminController" method="post" name="form">' +
-		'<input type="hidden" name="command" value="diaryDetail" />' +
-		'<input type="hidden" name="dId" value="'+ dId +'" />' +
-	'</form>';
-	$(".diary_wrap").append(html);
-	form.submit();
+	if(!$("#form").length) {
+		html = 
+		'<form action="../adminController" method="post" id="form" name="form">' +
+			'<input type="hidden" name="command" value="diaryDetail" />' +
+			'<input type="hidden" name="dId" value="'+ dId +'" />' +
+		'</form>';
+		$(".diary_wrap").append(html);
+	} else {
+		$("input[name='dId']").val(dId);
+	}
+	
+	$("#form").submit();
 }
 
 

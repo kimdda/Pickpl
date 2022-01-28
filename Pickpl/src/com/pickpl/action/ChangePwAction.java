@@ -21,6 +21,9 @@ public class ChangePwAction implements Action {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
+//		System.out.println(id + " / " + pw);
+//		System.out.println(mDao.updatePw(id, pw));
+		
 		if(mDao.updatePw(id, pw) == 1)
 			resultObj.put("result", "success");
 		

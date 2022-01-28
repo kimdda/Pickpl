@@ -69,7 +69,7 @@ public class ActionFactory {
 			action = new DiaryWriteAction();
 			break;
 			
-		case "updateViewCount" :
+		case "updateViewNRecent" :
 			action = new UpdateViewNRecentAction();
 			break;
 			

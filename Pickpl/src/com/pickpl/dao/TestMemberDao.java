@@ -39,7 +39,7 @@ public class TestMemberDao {
 	}
 	// 비밀번호 변경
 	static void testUpdatePw() {
-		System.out.println(mDao.updatePw("testtest", "12341234"));
+		System.out.println(mDao.updatePw("testid", "12341234"));
 	}
 	// 로그인(아이디 비번 확인)
 	static void testLogincheck() {
@@ -96,7 +96,7 @@ public class TestMemberDao {
 		// 계정상태 변경
 //		testUpdateStat();
 		// 비밀번호 변경
-//		testUpdatePw();
+		testUpdatePw();
 		// 로그인
 //		testLogincheck();
 		// 계정상태확인

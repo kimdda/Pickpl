@@ -15,7 +15,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
-		System.out.println(command + " start..");
+//		System.out.println(command + " start..");
 		ActionFactory af = ActionFactory.getInstance();
 		
 		Action action = af.getAction(command);

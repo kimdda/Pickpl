@@ -131,6 +131,18 @@ $(function() {
 		}
 	});
 	
+	
+	//sns 로그인 버튼 준비중..
+	$(document).on("click", ".sns_login_btn", function() {
+		Swal.fire({
+		  text: "곧 만나요",
+		  icon: 'info',
+		  confirmButtonColor: '#0ea098',
+		  confirmButtonText: '확인',
+		  reverseButtons: true
+		})
+	});
+	
 });
 
 // 픽 버튼 클릭 이벤트
@@ -324,11 +336,11 @@ function addViewCount(e) {
 	$.ajax({
 		url: 'Controller',
 		type: 'post',
-		data: {'command' : 'updateViewCount', 'dId':dId},
+		data: {'command' : 'updateViewNRecent', 'dId':dId},
 		dtatType: 'json',
 		success: function(data) {
 			//console.log(data);
-			if(data.result == 'success') {
+			if(data.viewR == 'success' && data.recentR == 'success') {
 				// 뷰 카운트 증가 성공 시 상세 페이지 이동
 				goToDetail(dId);
 			}
@@ -338,9 +350,7 @@ function addViewCount(e) {
 
 // 다이어리 디테일 페이지 접속
 function goToDetail(dId) {
-//	dId = $(e.target).parents(".diary").data("did");
 	post_to_url('Controller',{'command':'diaryDetail','dId': dId});
-//	post_to_url('Controller',{'command':'addViewCount','dId': dId});
 }
 
 

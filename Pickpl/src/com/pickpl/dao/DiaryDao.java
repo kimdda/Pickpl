@@ -43,7 +43,7 @@ public class DiaryDao {
 		 return list;
 	}
 	
-	// ÇÈ ¹ŞÀº °³¼ö
+	// í”½ ë°›ì€ ê°œìˆ˜
 	public int getPickedCount(String id) {
 		String sql = "SELECT pick_count FROM view_list WHERE writer_id = ?";
 		int pickedCnt = 0;
@@ -61,7 +61,7 @@ public class DiaryDao {
 		return pickedCnt;
 	}
 	
-	// ÇÈÇÑ °³¼ö
+	// í”½í•œ ê°œìˆ˜
 	public int getPickCount(String id) {
 		int pickCnt = 0;
 		String sql = "SELECT folder_d_count FROM pick WHERE pick_id = ?";
@@ -79,7 +79,7 @@ public class DiaryDao {
 		return pickCnt;
 	}
 	
-	// ¿Ã¸° ±Û °³¼ö
+	// ì˜¬ë¦° ê¸€ ê°œìˆ˜
 	public int getPickplCount(String id) {
 		int pickplCnt = 0;
 		String sql = "SELECT count(*) FROM view_list WHERE writer_id = ?";
@@ -97,7 +97,7 @@ public class DiaryDao {
 		return pickplCnt;
 	}
 	
-	// ÇÈ ¸®½ºÆ®
+	// í”½ ë¦¬ìŠ¤íŠ¸
 	public ArrayList<Integer> getPickList(String id) {
 		ArrayList<Integer> pickList = new ArrayList<Integer>();
 		String sql = "SELECT pick_d_id FROM pick WHERE pick_id = ?";
@@ -124,7 +124,7 @@ public class DiaryDao {
 		return pickList;
 	}
 	
-	// ´ÙÀÌ¾î¸® °Ë»ö 
+	// ë‹¤ì´ì–´ë¦¬ ê²€ìƒ‰
 	public ArrayList<SearchListDto> getPlace(String keyword, String order) {
 		ArrayList<SearchListDto> searchList = new ArrayList<SearchListDto>();
 		
@@ -167,7 +167,7 @@ public class DiaryDao {
 		return searchList;
 	}
 	
-	// ÃßÃµ °Ë»ö¾î
+	// ì¶”ì²œ ê²€ìƒ‰ì–´
 	public ArrayList<String> getAroundPlaces(String keyword) {
 		ArrayList<String> rcmndList = new ArrayList<String>();
 		String sql = "SELECT gu, count(gu) count FROM diary d, map m WHERE d.diary_id = m.map_d_id and "
@@ -187,7 +187,7 @@ public class DiaryDao {
 		return rcmndList;
 	}
 	
-	// ÃßÃµ °Ë»ö¾î _  ºä¼ö ³ôÀº ±Û 20°³ Áß 2°³
+	// ì¶”ì²œ ê²€ìƒ‰ì–´ _  ë·°ìˆ˜ ë†’ì€ ê¸€ 20ê°œ ì¤‘ 2ê°œ
 	public ArrayList<String> getRandomPlaces() {
 		ArrayList<String> list = new ArrayList<String>();
 		String sql = "SELECT * FROM (SELECT rownum r, l.* FROM (SELECT * FROM view_list ORDER BY view_count DESC) l) list WHERE r <= 20";
@@ -206,7 +206,7 @@ public class DiaryDao {
 		return list;
 	}
 	
-	// ´ÙÀÌ¾î¸® ¸®½ºÆ®
+	// ë‹¤ì´ì–´ë¦¬ ë¦¬ìŠ¤íŠ¸
 	public ArrayList<ViewDiaryDto> getDiaryList(String id, String order, String loginId) {
 		ArrayList<ViewDiaryDto> diaryList = new ArrayList<ViewDiaryDto>();
 		String sql = "SELECT * FROM view_list WHERE writer_id = ? ORDER BY ";
@@ -234,7 +234,7 @@ public class DiaryDao {
 		return diaryList;
 	}
 	
-	// ÇÈ ¿©ºÎ È®ÀÎ
+	// í”½ ì—¬ë¶€ í™•ì¸
 	public String checkPick(String id, int dId) {
 		String pick = "pick";
 		String sql = "SELECT * FROM pick WHERE pick_id=? and (pick_d_id like ? ESCAPE '/' or pick_d_id like ? ESCAPE '/')";
@@ -254,7 +254,7 @@ public class DiaryDao {
 		return pick;
 	}
 	
-	// ±Û »èÁ¦ ½Ã ´ÙÀÌ¾î¸®_ÀÎÆ÷ »óÅÂ º¯°æ
+	// ê¸€ ì‚­ì œ ì‹œ ë‹¤ì´ì–´ë¦¬_ì¸í¬ ìƒíƒœ ë³€ê²½
 	public int updateDiaryInfo(int dId) {
 		String sql = "UPDATE diary_info SET del_date = sysdate, up_stat='D' WHERE d_id=?";
 		try {
@@ -268,7 +268,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û »èÁ¦ ½Ã _ ´ÙÀÌ¾î¸® »èÁ¦
+	// ê¸€ ì‚­ì œ ì‹œ _ ë‹¤ì´ì–´ë¦¬ ì‚­ì œ
 	public int deleteDiary(int dId) {
 		try {
 			String sql = "DELETE FROM diary WHERE diary_id=?";
@@ -284,7 +284,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û »èÁ¦ ½Ã _ ¸Ê »èÁ¦
+	// ê¸€ ì‚­ì œ ì‹œ _ ë§µ ì‚­ì œ
 	public int deleteMap(int dId) {
 		String sql = "DELETE FROM map WHERE map_d_id=?";
 		try {
@@ -298,7 +298,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û »èÁ¦ _ ÇÈ ¸®½ºÆ®¿¡¼­ »èÁ¦
+	// ê¸€ ì‚­ì œ _ í”½ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œ
 	public void byePickFolderList(int dId) {
 		String sql = "SELECT * FROM pick WHERE pick_d_id like ?";
 		try {
@@ -322,7 +322,7 @@ public class DiaryDao {
 		}
 	}
 	
-	// Á¶È¸¼ö Áõ°¡
+	// ì¡°íšŒìˆ˜ ì¦ê°€
 	public int updateViewCount(int dId) {
 		String sql = "UPDATE diary SET view_count = (view_count + 1) WHERE diary_id = ?";
 		try {
@@ -337,7 +337,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ´ÙÀÌ¾î¸® ³»¿ë ºÒ·¯¿À±â
+	// ë‹¤ì´ì–´ë¦¬ ë‚´ìš© ë¶ˆëŸ¬ì˜¤ê¸°
 	public HashMap<String, String> getDiaryDetail(int dId) {
 		HashMap<String, String> diaryDetail = new HashMap<String, String>();
 		StringBuffer sql = new StringBuffer();
@@ -384,7 +384,7 @@ public class DiaryDao {
 		return diaryDetail;
 	}
 	
-	// ´ÙÀÌ¾î¸® ÁÖº¯ Áö¿ª _ Áö¿ª(½Ã/µµ) °Ë»ö
+	// ë‹¤ì´ì–´ë¦¬ ì£¼ë³€ ì§€ì—­ _ ì§€ì—­(ì‹œ/ë„) ê²€ìƒ‰
 	public ArrayList<ViewDiaryDto> getAroundRegion(int dId, String region, String loginId) {
 		ArrayList<ViewDiaryDto> aroundRegionList = new ArrayList<ViewDiaryDto>();
 		String sql = "SELECT * FROM view_list WHERE d_id != ? and address like ? ORDER BY view_count DESC";
@@ -407,7 +407,7 @@ public class DiaryDao {
 		return aroundRegionList;
 	}
 	
-	// ´ÙÀÌ¾î¸® ÁÖº¯ Áö¿ª _ µµ½Ã(½Ã//±¸) °Ë»ö
+	// ë‹¤ì´ì–´ë¦¬ ì£¼ë³€ ì§€ì—­ _ ë„ì‹œ(ì‹œ//êµ¬) ê²€ìƒ‰
 	public ArrayList<ViewDiaryDto> getAroundCity(int dId, String city, String loginId) {
 		ArrayList<ViewDiaryDto> aroundCityList = new ArrayList<ViewDiaryDto>();
 		String sql = "SELECT * FROM view_list WHERE d_id != ? and address like ? ORDER BY view_count DESC";
@@ -426,7 +426,7 @@ public class DiaryDao {
 		return aroundCityList;
 	}
 	
-	// ¸ŞÀÎ ¿äÁò ¶ß´Â ¿©ÇàÁö(Áö¿ª)
+	// ë‹¤ì´ì–´ë¦¬ ì£¼ë³€ ì§€ì—­ _ ë„ì‹œ(ì‹œ//êµ¬) ê²€ìƒ‰
 	public HashMap<String, String> getPopular() {
 		HashMap<String, String> popularList = new HashMap<String, String>();
 		String sql = "SELECT * FROM view_list l, map m WHERE l.d_id = m.map_d_id ORDER BY l.view_count DESC";
@@ -448,7 +448,7 @@ public class DiaryDao {
 		return popularList;
 	}
 	
-	// Á¶È¸¼ö ³ôÀº ÇÈÇÃ
+	// ì¡°íšŒìˆ˜ ë†’ì€ í”½í”Œ
 	public ArrayList<ViewDiaryDto> getHighViews(String loginId) {
 		ArrayList<ViewDiaryDto> highViewList = new ArrayList<ViewDiaryDto>();
 		
@@ -469,7 +469,7 @@ public class DiaryDao {
 		return highViewList;
 	}
 	
-	// °ü¸®ÀÚ ÃßÃµ ¸ñ·Ï
+	// ê´€ë¦¬ì ì¶”ì²œ ëª©ë¡
 	public ArrayList<RcmndListDto> getRcmndList() {
 		ArrayList<RcmndListDto> rcmndList = new ArrayList<RcmndListDto>();
 		
@@ -498,7 +498,7 @@ public class DiaryDao {
 		return rcmndList;
 	}
 	
-	// ¸ñ·Ï¿¡ ´ëÇÑ ÇÈÇÃ °¡Á®¿À±â
+	// ëª©ë¡ì— ëŒ€í•œ í”½í”Œ ê°€ì ¸ì˜¤ê¸°
 	public ArrayList<ViewDiaryDto> getDiary(String dId, String loginId) {
 		ArrayList<ViewDiaryDto> diaryList = new ArrayList<ViewDiaryDto>();
 		String[] diary = dId.split("_");
@@ -521,28 +521,7 @@ public class DiaryDao {
 		return diaryList;
 	}
 	
-	// ÃÖ±Ù º» ¿©ÇàÁö
-//	public ArrayList<ViewDiaryDto> getRecent(String loginId) {
-//		ArrayList<ViewDiaryDto> recentList = new ArrayList<ViewDiaryDto>();
-//		String sql = "SELECT * FROM recent WHERE recent_id = ?";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, loginId);
-//			rs = pstmt.executeQuery();
-//			String recent = null;
-//			if(rs.next()) {
-//				recent = rs.getString("recent_list");
-//			}
-//			if(recent != null) {
-//				recentList = getDiary(recent, loginId);				
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		return recentList;
-//	}
-	
+	// ìµœê·¼ ë³¸ ì—¬í–‰ì§€
 	public String getRecent(String loginId) {
 		String recent = null;
 		String sql = "SELECT * FROM recent WHERE recent_id = ?";
@@ -559,7 +538,8 @@ public class DiaryDao {
 		
 		return recent;
 	}
-	// ÃÖ±Ù º» ±Û ¸ñ·Ï Ãß°¡
+	
+	// ìµœê·¼ ë³¸ ê¸€ ëª©ë¡ ì¶”ê°€
 	public int insertRecent(String loginId, String dId) {
 		String sql = "INSERT INTO recent(recent_id, recent_list) VALUES(?,?)";
 		try {
@@ -574,7 +554,7 @@ public class DiaryDao {
 		
 		return 0;
 	}
-	// ÃÖ±Ù º» ±Û ¸ñ·Ï ¾÷µ¥ÀÌÆ®
+	// ìµœê·¼ ë³¸ ê¸€ ëª©ë¡ ì—…ë°ì´íŠ¸
 	public int updateRecent(String loginId, ArrayList<String> recentList) {
 		String recent = "";
 		for(String list : recentList) {
@@ -595,7 +575,7 @@ public class DiaryDao {
 	}
 	
 	
-	// ´ñ±Û °¡Á®¿À±â
+	// ëŒ“ê¸€ ê°€ì ¸ì˜¤ê¸°
 	public ArrayList<CmntsDto> getCmnts(int dId) {
 		ArrayList<CmntsDto> cmntsList = new ArrayList<CmntsDto>();
 		
@@ -621,7 +601,7 @@ public class DiaryDao {
 		return cmntsList;
 	}
 	
-	// ´ñ±Û ÀÛ¼º
+	// ëŒ“ê¸€ ì‘ì„±
 	public int writeCmnt(CmntsDto dto) {
 		String sql = "INSERT INTO comments(cmnt_idx, cmnt_d_id, cmnt_id, cmnt_contents) VALUES (cmnt_seq.nextval, ?, ?, ?)";
 		try {
@@ -636,7 +616,7 @@ public class DiaryDao {
 		}
 		return 0;
 	}
-	// ¹æ±İ ÀÛ¼ºÇÑ ´ñ±Û ±Û¹øÈ£
+	// ë°©ê¸ˆ ì‘ì„±í•œ ëŒ“ê¸€ ê¸€ë²ˆí˜¸
 	public int getLastCmntIdx(String loginId) {
 		String sql = "SELECT cmnt_idx FROM comments WHERE cmnt_date = (SELECT max(cmnt_date) FROM comments WHERE cmnt_id = ?)";
 		try {
@@ -652,7 +632,7 @@ public class DiaryDao {
 		}
 		return 0;
 	}
-	// ´ñ±Û »èÁ¦
+	// ëŒ“ê¸€ ì‚­ì œ
 	public int deleteMyCmnt(int idx) {
 		String sql = "UPDATE comments SET cmnt_stat = 'N' WHERE cmnt_idx = ?";
 		
@@ -667,7 +647,7 @@ public class DiaryDao {
 		
 		return 0;
 	}
-	// Å»Åğ _ ±Û¿¡ ´ëÇÑ ´ñ±Û ÀüÃ¼ »óÅÂ º¯°æ
+	// íƒˆí‡´ _ ê¸€ì— ëŒ€í•œ ëŒ“ê¸€ ì „ì²´ ìƒíƒœ ë³€ê²½
 	public int updateComments(int dId) {
 		String sql = "UPDATE comments SET cmnt_stat='N' WHERE cmnt_d_id = ?";
 		try {
@@ -682,7 +662,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ÀÛ¼º _ ´ÙÀÌ¾î¸® ÀÎÆ÷ Ãß°¡
+	// ê¸€ ì‘ì„± _ ë‹¤ì´ì–´ë¦¬ ì¸í¬ ì¶”ê°€
 	public int insertDiaryInfo(DiaryAllDto dto) {
 		String sql = "INSERT INTO diary_info(d_id, writer_id) VALUES (diary_seq.nextval, ?)";
 		try {
@@ -695,7 +675,7 @@ public class DiaryDao {
 		}
 		return 0;
 	}
-	// ¹æ±İ ÀÛ¼ºÇÑ ±Û¹øÈ£
+	// ë°©ê¸ˆ ì‘ì„±í•œ ê¸€ë²ˆí˜¸
 	public int getLastDId(String loginId) {
 		String sql = "SELECT d_id FROM diary_info WHERE up_date = (SELECT max(up_date) FROM diary_info WHERE writer_id = ?)";
 		try {
@@ -712,7 +692,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ÀÛ¼º _ ´ÙÀÌ¾î¸® ³»¿ë Ãß°¡
+	// ê¸€ ì‘ì„± _ ë‹¤ì´ì–´ë¦¬ ë‚´ìš© ì¶”ê°€
 	public int insertDiary(DiaryAllDto dto) {
 		StringBuffer sql = new StringBuffer();
 		sql.append("INSERT INTO diary (DIARY_ID, IMG, PLACE_NAME, ADDRESS, WEATHER_ID, VISIT_DATE, VISIT_TIME, ")
@@ -745,7 +725,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ÀÛ¼º _ Áöµµ Ãß°¡
+	// ê¸€ ì‘ì„± _ ì§€ë„ ì¶”ê°€
 	public int insertMap(DiaryAllDto dto) {
 		String sql = "INSERT INTO map(map_d_id, latitude, longitude, do, gu) VALUES(?, ?, ?, ?, ?)";
 		try {
@@ -763,7 +743,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ¼öÁ¤ _ ´ÙÀÌ¾î¸® ÀÎÆ÷ ¾÷µ¥ÀÌÆ®
+	// ê¸€ ìˆ˜ì • _ ë‹¤ì´ì–´ë¦¬ ì¸í¬ ì—…ë°ì´íŠ¸
 	public int mdfyDiaryInfo(int dId) {
 		String update = "UPDATE diary_info SET re_date = sysdate WHERE d_id = ?";
 		try {
@@ -777,7 +757,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ¼öÁ¤ _ ´ÙÀÌ¾î¸® ¾÷µ¥ÀÌÆ®
+	// ê¸€ ìˆ˜ì • _ ë‹¤ì´ì–´ë¦¬ ì—…ë°ì´íŠ¸
 	public int mdfyDiary(DiaryAllDto dto) {
 		StringBuffer sql = new StringBuffer();
 		sql.append("UPDATE diary SET img=?, place_name=?, address=?, weather_id=?, ")
@@ -809,7 +789,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ±Û ¼öÁ¤ _ Áöµµ ¾÷µ¥ÀÌÆ®
+	// ê¸€ ìˆ˜ì • _ ì§€ë„ ì—…ë°ì´íŠ¸
 	public int mdfyMap(DiaryAllDto dto) {
 		String sql = "UPDATE map SET latitude = ?, longitude = ?, do = ?, gu = ? WHERE map_d_id = ?";
 		try {
@@ -827,7 +807,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ½Å°í Á¢¼ö
+	// ì‹ ê³  ì ‘ìˆ˜
 	public int report(ReportDto dto) {
 		try {
 			String sql = "INSERT INTO report(report_idx, report_id, report_type, target_id, target_d_id, report_contents) "
@@ -846,7 +826,7 @@ public class DiaryDao {
 		return 0;
 	}
 	
-	// ½Å°í¿¡ µû¶ó »óÅÂ º¯°æ
+	// ì‹ ê³ ì— ë”°ë¼ ìƒíƒœ ë³€ê²½
 	public int reportType(ReportDto dto) {
 		String sql = null;
 		int r = 0;

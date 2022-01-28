@@ -27,11 +27,15 @@ public class UpdateViewNRecentAction implements Action {
 		
 		int viewR = dDao.updateViewCount(Integer.parseInt(dId));
 		
+		int recentR = 0;
 		ArrayList<String> recentList = new ArrayList<String>();
-		for(String recent : dDao.getRecent(loginId).split("_")) {
-			recentList.add(recent);
+		String recent = dDao.getRecent(loginId);
+		if(recent != null) {
+			for(String r : recent.split("_")) {
+				recentList.add(recent);
+			}
 		}
-		
+			
 		if(recentList.contains(dId)) 
 			recentList.remove(recentList.indexOf(dId));
 		else if(recentList.size() == 15) {
@@ -39,8 +43,7 @@ public class UpdateViewNRecentAction implements Action {
 		}
 		recentList.add(0, dId);
 		
-		int recentR = 0;
-		if(recentList.size() == 0) {
+		if(recentList.size() == 1) {
 			recentR = dDao.insertRecent(loginId, dId);
 		} else {
 			recentR = dDao.updateRecent(loginId, recentList);
@@ -53,7 +56,7 @@ public class UpdateViewNRecentAction implements Action {
 			resultObj.put("recentR", "success");
 		
 		request.setAttribute("result", resultObj);
-		request.getRequestDispatcher("Controller?command=result&resultAct=" + cmd).forward(request, response);			
+		request.getRequestDispatcher("Controller?command=result&resultAct=updateViewNRecent").forward(request, response);			
 	}
 	
 }

@@ -196,14 +196,15 @@ footer .f_search_box .f_search_icon {position: absolute; top: 15px; right: 10px;
 .login_pop .login_fail {padding: 10px; text-align: center; background: #f0f0f0; font-size: 14px;}
 .login_pop .login_fail p::before {content:'error'; display: inline-block; margin-right: 5px; margin-top: -3px; vertical-align: middle; font-family:'Material Icons'; font-size: 20px; color:#f27474;}
 .login_pop .login_btn {width: 180px;}
-.login_pop .divider {display:none; margin-top: 40px; margin-bottom: 10px;}
+.login_pop .divider {margin-top: 40px; margin-bottom: 10px;}
 .login_pop .divider::after {content:'SNS 계정으로 로그인'; top: -18px;}
-.login_pop .sns_login_box {display:none; text-align: center;}
+.login_pop .sns_login_box {text-align: center;}
 .login_pop .sns_login_btn {width: 135px; height: 36px; margin-right: 5px; margin-bottom: 5px; border-radius: 2px;}
 .login_pop .google_login {background: center / contain no-repeat url('../img/icon/login_btn_google.svg');}
 .login_pop .naver_login {background: center / contain no-repeat url('../img/icon/login_btn_naver.svg');}
 .login_pop .sns_login_btn.kakao_login {background: center / contain no-repeat url('../img/icon/login_btn_kakao.svg'); margin-right: 0;}
 .login_pop .sns_login_btn:hover {box-shadow: 1px 1px 3px #aaa;}
+.login_pop .sns_login_btn:active {background-blend-mode: multiply;}
 
 /********************* 픽 폴더 팝업 *********************/
 /* #pickPop {display: block;} */

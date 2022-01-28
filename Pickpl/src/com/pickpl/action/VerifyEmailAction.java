@@ -23,6 +23,8 @@ public class VerifyEmailAction implements Action {
 				mDao.updateStat(id, "A");
 			}
 		}
+		
+		request.setAttribute("id", id);
 		request.getRequestDispatcher("Controller?command=result&resultAct="+command).forward(request, response);				
 	}
 }

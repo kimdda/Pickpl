@@ -2,7 +2,7 @@
     <wb-module deploy-name="Pickpl">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Pickpl"/>
         <property name="java-output-path" value="/Pickpl/build/classes"/>
+        <property name="context-root" value="Pickpl"/>
     </wb-module>
 </project-modules>

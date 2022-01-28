@@ -45,7 +45,7 @@ public class LoginAction implements Action {
 		
 		// 로그인 상태 체크
 		else if(toDo.equals("loginCheck")) {
-			System.out.println((String)session.getAttribute("loginId"));
+//			System.out.println((String)session.getAttribute("loginId"));
 			    //세션 객체 만들기
 			if(session.getAttribute("loginId") == null) {
 				resultObj.put("result", "logout");

@@ -76,7 +76,6 @@ public class ResultAction implements Action {
 		default :
 			response.setContentType("applictaion/json;charset=UTF-8");
 			PrintWriter out = response.getWriter();
-//			System.out.println((JSONObject)request.getAttribute("result"));
 			out.print((JSONObject)request.getAttribute("result"));
 			break;
 		}

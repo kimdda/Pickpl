@@ -124,7 +124,7 @@ function toDetail(e) {
 		'</form>';
 		$(".report_wrap").append(html);
 	} else {
-		$("[name='dId']").val(idx);	
+		$("[name='idx']").val(idx);	
 	}
 	$("#form").submit();
 }

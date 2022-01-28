@@ -59,31 +59,30 @@ public class MainAction implements Action {
 			if(loginId != null) {
 				JSONObject resultObj = new JSONObject();
 				JSONArray recentListArr = new JSONArray();
-				//ArrayList<ViewDiaryDto> recentList = dDao.getRecent(loginId);
 				
 				String recent = dDao.getRecent(loginId);
 				ArrayList<ViewDiaryDto> recentList = null;
 				if(recent != null) {
 					recentList = dDao.getDiary(recent, loginId);
-				}
-				
-				for(ViewDiaryDto dto : recentList) {
-					JSONObject obj = new JSONObject();
-					obj.put("d_id", dto.getD_id());
-					obj.put("writer", dto.getWriter_id());
-					obj.put("profile", dto.getProfile());
-					JSONArray imgArr = new JSONArray();
-					for(String img : dto.getImg().split("_")) {
-						imgArr.add(img);
-					}
-					obj.put("img", imgArr);
-					obj.put("place_name", dto.getPlace_name());
-					obj.put("address", dto.getAddress());
-					obj.put("pick_count", dto.getPick_count());
-					obj.put("view_count", dto.getView_count());
-					obj.put("pick", dto.getPick());
 					
-					recentListArr.add(obj);
+					for(ViewDiaryDto dto : recentList) {
+						JSONObject obj = new JSONObject();
+						obj.put("d_id", dto.getD_id());
+						obj.put("writer", dto.getWriter_id());
+						obj.put("profile", dto.getProfile());
+						JSONArray imgArr = new JSONArray();
+						for(String img : dto.getImg().split("_")) {
+							imgArr.add(img);
+						}
+						obj.put("img", imgArr);
+						obj.put("place_name", dto.getPlace_name());
+						obj.put("address", dto.getAddress());
+						obj.put("pick_count", dto.getPick_count());
+						obj.put("view_count", dto.getView_count());
+						obj.put("pick", dto.getPick());
+						
+						recentListArr.add(obj);
+					}
 				}
 				
 				resultObj.put("recentList", recentListArr);

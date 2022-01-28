@@ -50,7 +50,7 @@
 	
 			<div class="weather right_width">
 				<label class="input_label">날씨</label>
-				<button value="0" id="0" class="weather_btn selected" type="button"></button>
+				<button value="0" id="0" class="weather_btn" type="button"></button>
 				<button value="1" id="1" type="button" class="weather_btn"></button>
 				<button value="2" id="2" type="button" class="weather_btn"></button>
 				<button value="3" id="3" type="button" class="weather_btn"></button>

@@ -35,7 +35,7 @@ function checkPw() {
 		},
 		datatype: "json",
 		success: function(data) {
-			console.log(data.result);
+			console.log(data);
 			if(data.result == "success") {
 				changeForm.reset();
 				Swal.fire({

@@ -71,10 +71,8 @@ public class ListAction implements Action {
 				rcmndPlace.add(aroundList.get(i));
 		} else {
 			rcmndPlace.add(aroundList.get(0));
-			System.out.println("size " + aroundList.size());
 			while(rcmndPlace.size() < 3) {
 				int n = (int)(Math.random() * (aroundList.size() - 1) + 1);
-				System.out.println("n " + n);
 				rcmndPlace.add(aroundList.get(n));
 			}			
 		}
