@@ -36,7 +36,7 @@
 [시연 영상 링크]: URL "시연 영상"
 
 ## 화면 설명 pdf
-[pdf 링크](http://naver.me/x0Gkxqmd)
+[pdf 링크](http://naver.me/FJFvlIOo)
 
 
 ## 메인페이지
