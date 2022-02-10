@@ -17,7 +17,7 @@ public class BroadSocket {
     
     @OnMessage				// 클라이언트로부터 메시지가 도착했을 때.
     public void onMessage(String message, Session session) throws IOException {
-        System.out.println("from client : " + message);
+        // System.out.println("from client : " + message);
         
         
         synchronized(clients) {

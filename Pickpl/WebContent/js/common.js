@@ -1,4 +1,3 @@
-
 // 새로고침 시 스크롤 상단으로 이동
 $(window).on('load', function() {
 	$(window).scrollTop(0);
@@ -340,7 +339,8 @@ function addViewCount(e) {
 		dtatType: 'json',
 		success: function(data) {
 			//console.log(data);
-			if(data.viewR == 'success' && data.recentR == 'success') {
+			if(data.viewR == 'success') { 
+				//&& data.recentR == 'success') {
 				// 뷰 카운트 증가 성공 시 상세 페이지 이동
 				goToDetail(dId);
 			}

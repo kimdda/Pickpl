@@ -127,7 +127,7 @@ $(function() {
 			data: {'command': 'searchList', "keyword": keyword, 'order': order},
 			datatype: "json",
 			success: function(data) {
-				// console.log(data);
+				 console.log(data);
 				listData = data.searchList;
 				recommendData = data.recommend;
 				

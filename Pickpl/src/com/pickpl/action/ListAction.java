@@ -46,7 +46,7 @@ public class ListAction implements Action {
 			obj.put("img", imgArr);
 			obj.put("place_name", dto.getPlace_name());
 			obj.put("address", dto.getAddress());
-			obj.put("pick_count", dto.getPick());
+			obj.put("pick_count", dto.getPick_count());
 			obj.put("view_count", dto.getView_count());
 			if(dto.getWriter_id().equals(loginId))
 				obj.put("pick", dDao.checkPick(loginId, dto.getD_id()) + " hide");				

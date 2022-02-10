@@ -34,6 +34,7 @@ public class DiaryDao {
 			 String place_name = rs.getString("place_name");
 			 String address = rs.getString("address");
 			 String visit_date = (rs.getString("visit_date").split(" "))[0];
+			 //System.out.println(rs.getInt("pick_count"));
 			 int pick_count = rs.getInt("pick_count");
 			 int view_count = rs.getInt("view_count");
 			 String pick = checkPick(loginId, d_id);
@@ -221,6 +222,8 @@ public class DiaryDao {
 			sql += "view_count DESC";
 			break;
 		}
+		
+		System.out.println("겟다이어리리스트");
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

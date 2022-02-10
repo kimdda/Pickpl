@@ -1,5 +1,6 @@
 package com.pickpl.action;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,10 +36,10 @@ public class MdfyMyinfoAction implements Action {
 //	    System.out.println("real path : " + path);
 	    
 	    // upload 폴더가 없으면 만듦. --------------------------
-//	    File filePath = new File(path);
-//	    if(filePath.exists()==false) {
-//	    	filePath.mkdirs();
-//	    }
+	    File filePath = new File(path);
+	    if(filePath.exists()==false) {
+	    	filePath.mkdirs();
+	    }
 	    // ------------------------------------------------
 		
 		int sizeLimit = 10*1024*1024;		//10MB 제한

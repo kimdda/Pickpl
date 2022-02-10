@@ -92,6 +92,7 @@ public class ChatAction implements Action {
 			String message = request.getParameter("message");
 			String sendDate = request.getParameter("sendDate");
 			
+			
 			if(cDao.updateMsg(loginId, toId, message, sendDate) == 1) {
 				resultObj.put("result", "sucess");
 			}

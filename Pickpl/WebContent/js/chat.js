@@ -112,9 +112,11 @@ function onMessage(event) {
 function onOpen(event) {
 	//$("#msgWindow").append("<p class='chat_content'>"+sendTo+"님과의 채팅에 참여하였습니다.</p>");
 }
+
 function onError(event) {
 	 alert(event.data);
 }
+
 function send() {
 	msgIdx++;
 	sendTime = (new Date).toLocaleTimeString().substring(0, 5);
@@ -339,7 +341,7 @@ function dateTimeFormat(newDate) {
 	year = newDate.getFullYear();
 	month = ('00' + (newDate.getMonth() + 1)).slice(-2);
 	date = ('00' + newDate.getDate()).slice(-2);
-	time = newDate.toLocaleTimeString();
+	time = newDate.toLocaleTimeString('it-IT');
 
 	return year + "-" + month + "-" + date + " " + time;
 }
